@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Deploy') {
+        stage('Build') {
             steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'a03848ec-119f-4526-a470-c42856cb0ac5', url: 'https://github.com/arundascts/sampleApplication.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'a03848ec-119f-4526-a470-c42856cb0ac5', url: 'https://github.com/arundascts/sampleApplication.git']]])
             }
         }
     }
